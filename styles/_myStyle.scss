@@ -200,3 +200,27 @@
     }
 }
 
+header   
+ .menu{
+        ul{
+          li{
+            position: relative;
+            &:last-child{
+                .cn_dd{
+                    right: 0;
+                    left: auto;
+                    max-width: 150px;
+                     button{
+                            display: block;
+                            width: 100%;
+                            background-color: transparent;
+                            border-color: transparent;
+                            padding: 5px 10px;
+                      }
+                   
+                }
+            }
+          }
+        }
+    }
+

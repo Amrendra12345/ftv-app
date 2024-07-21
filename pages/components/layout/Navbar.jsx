@@ -10,6 +10,7 @@ import Lang_dsp from '../../components/Lang_dsp';
 import Lang_dd from '../Lang_dd';
 import { useSession, signOut } from "next-auth/react";
 import axios from 'axios';
+import { FaList, FaSignOutAlt, FaUser, FaUserCircle } from "react-icons/fa";
 import { Inter } from 'next/font/google' 
 const inter = Inter({ subsets: ['latin'] })
 const nextAuthUrl = 'https://fasttrackvisa.com';
@@ -19,7 +20,7 @@ const Navbar = (props) => {
   const {locale, pathname} = useRouter();
   const router = useRouter()
 
- console.log(router)
+ //console.log(router)
   //Selecteddestination(locale)
 
   const { data: session } = useSession();
@@ -224,22 +225,22 @@ const Navbar = (props) => {
                       </li>
                       {userName !== null && userName !== undefined && userName !== '' ? (
                           <li className='cdd'>
-                          <span><i className='fa fa-user-circle'></i>
+                          <span><i className='mr-2'><FaUserCircle /></i>
                             {uName === null || userName === undefined || userName === '' ?
                               ' Hi User'
                               : ' ' + uName || userName
                             }</span>
                           {locale === '' ?
                             (<div className='cn_dd'>
-                              <Link href={'/my-profile'}><i className='fa fa-user'></i> My Profile </Link>
-                              <Link href={'/my-profile/my-transactions'}><i className='fa fa-list'></i> My Transaction</Link>
-                              <button onClick={logOut}><i className='fa fa-sign-out'></i> Log Out</button>
+                              <Link href={'/my-profile'}><i className='mr-2'><FaUser /></i> My Profile </Link>
+                              <Link href={'/my-profile/my-transactions'}><i className='mr-2'> <FaList /></i> My Transaction</Link>
+                              <button onClick={logOut}><i className='mr-2'><FaSignOutAlt /></i> Log Out</button>
                             </div>)
                             :
                             (<div className='cn_dd'>
-                              <Link href={'/' + locale + '/my-profile'}><i className='fa fa-user'></i> My Profile </Link>
-                              <Link href={'/' + locale + '/my-profile/my-transactions'}><i className='fa fa-list'></i> My Transaction </Link>
-                              <button onClick={logOut}><i className='fa fa-sign-out'></i> Log Out</button>
+                              <Link href={'/' + locale + '/my-profile'}><i className='mr-2'><FaUser /></i> My Profile </Link>
+                              <Link href={'/' + locale + '/my-profile/my-transactions'}><i className='mr-2'><FaList /></i> My Transaction </Link>
+                              <button onClick={logOut}><i className='mr-2'><FaSignOutAlt /></i> Log Out</button>
                             </div>)
                           }
                         </li>

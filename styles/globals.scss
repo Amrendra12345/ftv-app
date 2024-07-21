@@ -296,7 +296,19 @@ header {
     padding: 0;
     max-height: 300px;
     overflow: auto;
-    box-shadow: rgb(0 0 0 / 7%) 0 .7px 1.4px, rgb(0 0 0 / 5%) 0 1.9px 4px, rgb(0 0 0 / 5%) 0 4.5px 10px
+    box-shadow: rgb(0 0 0 / 37%) 0 0.7px 1.4px, rgb(0 0 0 / 36%) 0 1.9px 4px, rgb(0 0 0 / 50%) 0 4.5px 10px;
+    &::-webkit-scrollbar {
+        width: 10px;
+      }
+     &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
 }
 
 .la_ndd {
@@ -311,7 +323,11 @@ header {
     color: #333 !important;
     display: flex;
     align-items: center;
-    justify-content: flex-start
+    justify-content: flex-start;
+    padding: 5px 10px;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .cn_dd a:hover {
