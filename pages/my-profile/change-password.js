@@ -1,21 +1,29 @@
 // import Image from 'next/image'
 import Link from 'next/link';
 // import Router from 'next/router';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import LazyLoad from 'react-lazy-load';
-import Footer from '../../pages/components/Footer';
-import axios from 'axios'; 
-import Head from 'next/head';
+import axios from 'axios';
+import { useRouter } from 'next/router';
 
 export default function ChangePassword() {
+    const {locale} = useRouter()
+	const [c_ext, setcExt] = useState('');
 	const [oldPassword, setOldPassword] = useState('');
 	const [newPassword, setNewPassword] = useState('');
 	const [confirmNewPassword, setConfirmNewPassword] = useState('');
 	const [error, setError] = useState(null);
 	const [activeClass, setActiveClass] = useState('hsticky');
+
+
+	useEffect(() => {
+		setcExt(window.location.pathname.split('/')[1])
+
+	}, [])
+
+
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -29,48 +37,48 @@ export default function ChangePassword() {
 		data.append('current_password', oldPassword);
 		data.append('newpassword', newPassword);
 
-		axios.post('https://cms.fasttrackvisa.com/api/change-password',data).then((res) => {
-			console.log(res);
+		axios.post(`https://cms.fasttrackvisa.com/api/${c_ext}/change-password`, data).then((res) => {
+			//console.log(res);
 		}).catch((ex) => console.error("Update Password", ex), setError('Unable to change password'))
 	};
 
 	return (
 		<>
-             <Head>
-				<title>Change Password</title>
-			 </Head>
-			
 
-			<div className="checkout_banner mt-3">
+			{/* <header className={'App-header' + ` ${activeClass}`}>
+				<Nav ce_name={c_ext} lob_name="home_page" meta_title={'Apply Global eVisa | Tourist &amp; Business eVisa Online Services | Fast Track Visa'} meta_desc={'Apply for e-visa, tourist &amp; business visa globally online Through Fast Track Visa. We ensure fewer chances of rejection, world-class security, 24/7 customer support &amp; a speedy process.'} meta_keyword="" meta_img="/img/logo.png" meta_url={'my-profile/change-password'}> </Nav>
+			</header> */}
 
+			<div className="checkout_banner">
 				<Container>
 					<h1 className='mt-5'>Welcome back, </h1>
 					<p>Here's your account details.</p>
 				</Container>
-
 			</div>
-
-
 			<Container>
-			<ol className="breadcrumb pl-0 bg-white">
+				<ol className="breadcrumb pl-0 bg-white">
 					<li className="breadcrumb-item"><Link href={'/'}>
-							Home
+
+						Home
+
 					</Link></li>
 					<li className="breadcrumb-item"><Link href={'/my-profile'}>
+
 						My Profile
+
 					</Link></li>
 
-					<li className="breadcrumb-item active" aria-current="page"> My Transactions </li>
+					<li className="breadcrumb-item active" aria-current="page"> Change Password </li>
 				</ol>
-				<div className="desi-work-container pt-3"> 
- 
+
+				<div className="desi-work-container pt-3">
 
 					<Row>
 						<Col sm={12} md={3} lg={3}>
 							<ul className='profile_ul'>
-								<li><Link href={'/my-profile/my-transactions'}><i className='fa fa-list'></i> My Transactions</Link></li>
-								<li><Link href={'/my-profile/change-password'}><i className='fa fa-key'></i> Change Password</Link></li>
-								<li><Link href={'/my-profile'}><i className='fa fa-user'></i> Update Profile</Link></li>
+								<li><Link href={'/' + locale + '/my-profile/my-transactions'}><i className='fa fa-list'></i> My Transactions </Link></li>
+								<li><Link href={'/' + locale + '/my-profile/change-password'}><i className='fa fa-key'></i> Change Password </Link></li>
+								<li><Link href={'/' + locale + '/my-profile'}><i className='fa fa-user'></i> Update Profile </Link></li>
 							</ul>
 						</Col>
 						<Col sm={12} md={9} lg={9}>
@@ -124,12 +132,7 @@ export default function ChangePassword() {
 
 			</Container>
 
-			<hr />
 
-			<LazyLoad offset={100}>
-				<Footer ce_name=''></Footer>
-
-			</LazyLoad>
 		</>
 
 	);

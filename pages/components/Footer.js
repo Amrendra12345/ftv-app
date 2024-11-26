@@ -5,7 +5,7 @@ const Footer = (props) => {
     <footer className="w-full bg-gray-50 pt-4 mt-auto">
        <div className="container mx-auto">
            <div className="w-full flex sm:flex-col">
-              <Image src={"/img/logo2.png"}  width={180} height={45} alt="fast track visa"/>
+              <Image src={"/img/logo.webp"}  width={180} height={45} alt="fast track visa"/>
            </div>
        </div>
        <div className="w-full bg-gray-300 py-2">

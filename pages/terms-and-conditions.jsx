@@ -3,12 +3,17 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import styles from "../styles/term.module.scss";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 export default function TermsConditions() {
+  const {locale} = useRouter();
   return (
     <>
       <Head>
-        <title>Terms and conditions</title>
+        <title>Terms and Conditions | Fast Track Visa </title>
+        
+       <meta name="description" content={`If you’ve arrived here, we share a common passion: a deep love for travel. Whether you're seeking inspiration, planning tips for your next holiday, or simply an engaging read, we've got you covered.`} />
+    <link rel="canonical" href={`https://fasttrackvisa.com/${locale}/terms-and-conditions`}/>
       </Head>
       <div className="checkout_banner">
         <Container>

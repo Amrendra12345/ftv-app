@@ -46,42 +46,42 @@ const Abrand = () => {
         <div className="a-brand-sec">
             <Container>
                 <div className="ftv-title">
-                    <h2>A brand you can trust</h2>
+                    <h4 className='big_title'>A brand you can trust</h4>
                     <p>Helping Global Travelers move across borders with Ease </p>
                 </div>
                 <Slider {...settings}>
                     <div className="st-box">
                         <figure>
-                            <Image fill="true" alt="eVisas Issued" src={'/img/abrand-1.png'} width={174} height={130} />
+                            <Image  alt="eVisas Issued" src={'/img/abrand-1.png'} width={174} height={130} />
                         </figure>
-                        <h4>200,000</h4>
+                        <h5>200,000</h5>
 
                         <p>eVisas Issued</p>
 
                     </div>
                     <div className="st-box">
                         <figure>
-                            <Image fill="true" alt="eVisas Countries Covered" src={'/img/abrand-2.png'} width={117} height={114} />
+                            <Image  alt="eVisas Countries Covered" src={'/img/abrand-2.png'} width={117} height={114} />
                         </figure>
-                        <h4>40+</h4>
+                        <h5>40+</h5>
 
                         <p> eVisa Countries Covered</p>
 
                     </div>
                     <div className="st-box">
                         <figure>
-                            <Image fill="true" alt="Visa Success Ratio" src={'/img/abrand-3.png'} width={119} height={128} />
+                            <Image  alt="Visa Success Ratio" src={'/img/abrand-3.png'} width={119} height={128} />
                         </figure>
-                        <h4>99%</h4>
+                        <h5>99%</h5>
 
                         <p>Visa Success Ratio</p>
 
                     </div>
                     <div className="st-box">
                         <figure>
-                            <Image fill="true" alt="Nationalities Served" src={'/img/abrand-4.png'} width={131} height={125} />
+                            <Image  alt="Nationalities Served" src={'/img/abrand-4.png'} width={131} height={125} />
                         </figure>
-                        <h4>72</h4>
+                        <h5>72</h5>
 
                         <p>Nationalities Served </p>
 

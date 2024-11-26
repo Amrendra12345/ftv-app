@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-import CheckoutForm from "../../CheckoutForm";
+import CheckoutForm from "../../CheckoutForm2";
 import { Modal, ModalBody, Button } from "react-bootstrap";
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
@@ -39,8 +39,7 @@ const Payment = (props) => {
         </span>
       </Modal.Header>
       <ModalBody>
-           <CheckoutForm userInfo={props.paymentData}/>
-      
+           <CheckoutForm userInfo={props.paymentData}/>      
       </ModalBody>
     </Modal>
   );

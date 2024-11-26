@@ -1,13 +1,16 @@
 import Link from "next/link";
 import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
-import LazyLoad from "react-lazy-load";
+
 import Head from "next/head";
-const RefundCancellation = () => {
+const RefundCancellation = (props) => {
+ 
   return (
     <>
       <Head>
-        <title>Refund & cancellation</title>
+        <title>Refund and Cancellation | Fast Track Visa </title>
+        <meta name="description" content='Visit our website fasttrackvisa.com to learn about our refund and cancellation policy. We provide flight tickets, hotel booking, visa assistance, and tour and travel packages. Learn more.' />
+        <link rel="canonical" href={`https://fasttrackvisa.com/${props.country_ext}/refund-and-cancellation`}/>
       </Head>
       <section className="Refund">
         <div className="checkout_banner">
@@ -248,5 +251,10 @@ const RefundCancellation = () => {
     </>
   );
 };
-
+export async function getServerSideProps(ctx){
+  const country_ext = ctx.locale;
+   return{
+     props: {country_ext}
+   }
+}
 export default RefundCancellation;

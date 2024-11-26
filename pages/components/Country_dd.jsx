@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
   
    
     return (
-        <div className='cn_dd'>       
+        <div className='cn_dd'>
         <Link href={locale === 'en-in' ? 'en-in' : `${asPath}`} locale="en-in" className={locale === "" ? "mactive" : ""} title="USA"><b className="gss_img flag-us"></b>USA </Link>
         <Link href={locale === 'en-sg' ? 'en-sg' : `${asPath}`} locale="en-sg" className={locale === "en-sg" ? "mactive" : ""} title="Singapore"><b className="gss_img flag-sg"></b>Singapore </Link>
         <Link href={locale === 'zh-tw' ? 'zh-tw' : `${asPath}`}  locale="zh-tw" className={locale === "zh-tw" ? "mactive" : ""} title="Taiwan"><b className="gss_img flag-tw"></b>Taiwan</Link>
@@ -60,6 +60,7 @@ import { useEffect, useState } from "react";
         <Link href={locale === 'pt-pt' ? 'pt-pt' : `${asPath}`} locale="pt-pt" className={locale === "pt-pt" ? "mactive" : ""} title="Portugal"><b className="gss_img flag-pt"></b>Portugal</Link>
         <Link href={locale === 'sv-se' ? 'sv-se' : `${asPath}`} locale="sv-se" className={locale === "sv-se" ? "mactive" : ""} title="Sweden"><b className="gss_img flag-se"></b>Sweden</Link>
         <Link href={locale === 'es-mx' ? 'es-mx' : `${asPath}`}locale="es-mx" className={locale === "es-mx" ? "mactive" : ""} title="Mexico"><b className="gss_img flag-mx"></b>Mexico</Link>
+        
         <Link href={locale === 'pt-br' ? 'pt-br' : `${asPath}`} locale="pt-br" className={locale === "pt-br" ? "mactive" : ""} title="Brazil"><b className="gss_img flag-br"></b>Brazil</Link>
         <Link href={locale === 'fi-fi' ? 'fi-fi' : `${asPath}`} locale="fi-fi" className={locale === "fi-fi" ? "mactive" : ""} title="Finland"><b className="gss_img flag-fi"></b>Finland</Link>
         <Link href={locale === 'zh-cn' ? 'zh-cn' : `${asPath}`} locale="zh-cn" className={locale === "zh-cn" ? "mactive" : ""} title="China"><b className="gss_img flag-cn"></b>China</Link>

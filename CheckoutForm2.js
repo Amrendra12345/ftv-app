@@ -65,7 +65,7 @@ export default function CheckoutForm(props) {
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: "https://fasttrackvisa.com/" + sessionStorage.getItem('cId') + '/success/' + sessionStorage.getItem('ProductId') + '/' + sessionStorage.getItem('order_id'),
+        return_url: "http://localhost:3000/" + sessionStorage.getItem('cId') + '/success/' + sessionStorage.getItem('ProductId') + '/' + sessionStorage.getItem('order_id'),
       },
       //redirect: 
     })
@@ -106,14 +106,14 @@ export default function CheckoutForm(props) {
         options={{ defaultValues: { email: userInfo } }}
         value={email}
         onChange={(event) => {
-         // console.log(event)
+          console.log(event)
           setEmail(event.value.email);
         }}
       />
       <PaymentElement id="payment-element" options={paymentElementOptions} />
       <button disabled={isLoading || !stripe || !elements} id="submit" className="btn btn-primary mt-3">
         <span id="button-text">
-          {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
+          {isLoading ? "Processing ..." : "Pay now"}
         </span>
       </button>
       {/* Show any error or success messages */}

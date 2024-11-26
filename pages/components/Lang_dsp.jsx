@@ -3,6 +3,9 @@ import React from "react";
 
 const Lang_dsp = () => {
   const { locale } = useRouter();
+  const router = useRouter();
+  const { pathname, asPath, query } = router
+  
 
   return (
     <>
@@ -138,8 +141,6 @@ const Lang_dsp = () => {
         <span>lietuvis </span>
       ) : locale === "ro-ro" ? (
         <span>Română </span>
-      ) : locale === "hu-ro" ? (
-        <span>Magyar </span>
       ) : locale === "lv-lv" ? (
         <span>latviski </span>
       ) : locale === "nl-nl" ? (

@@ -3,6 +3,8 @@ import React from "react";
 import Link from "next/link";
 const Lang_dd = (props) => {
   const { locale } = useRouter();
+  const router = useRouter()
+  const { pathname, asPath, query } = router
  // console.log(locale);
   return (
     <>
@@ -10,46 +12,46 @@ const Lang_dd = (props) => {
         ""
       ) : locale === "en-sg" || locale === "zh-sg" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/en-sg" locale="en-sg">
+          <Link href={locale === 'en-sg' ? 'en-sg' : `${asPath}`} locale="en-sg">
             English
           </Link>
-          <Link href="/zh-sg" locale="zh-sg">
+          <Link href={locale === 'zh-sg' ? 'zh-sg' : `${asPath}`} locale="zh-sg">
             中文
           </Link>
         </div>
       ) : locale === "zh-tw" || locale === "en-tw" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/zh-tw" locale="zh-tw">
+          <Link href={locale === 'zh-tw' ? 'zh-tw' : `${asPath}`} locale="zh-tw">
             中文
           </Link>
-          <Link href="/en-tw" locale="en-tw">
+          <Link href={locale === "en-tw" ? "en-tw" : `${asPath}`} locale="en-tw">
             English
           </Link>
         </div>
       ) : locale === "ja-jp" || locale === "en-jp" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/ja-jp" locale="ja-jp">
+          <Link href={locale === 'ja-jp' ? 'ja-jp' : `${asPath}`} locale="ja-jp">
             倭国 
           </Link>
-          <Link href="/en-jp" locale="en-jp">
+          <Link href={locale === 'en-jp' ? 'en-jp' : `${asPath}`} locale="en-jp">
             English
           </Link>
         </div>
       ) : locale === "zh-hk" || locale === "en-hk" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/zh-hk" locale="zh-hk">
+          <Link href={locale === 'zh-hk' ? 'zh-hk' : `${asPath}`} locale="zh-hk">
             中文
           </Link>
-          <Link href="/en-hk" locale="en-hk">
+          <Link href={locale === 'en-hk' ? 'en-hk' : `${asPath}`} locale="en-hk">
             English
           </Link>
         </div>
       ) : locale === "ko-kr" || locale === "en-kr" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/ko-kr" locale="ko-kr">
+          <Link href={locale === 'ko-kr' ? 'ko-kr' : `${asPath}`} locale="ko-kr">
             한국어 
           </Link>
-          <Link href="/en-kr" locale="en-kr">
+          <Link href={locale === 'en-kr' ? 'en-kr' : `${asPath}`} locale="en-kr">
             English
           </Link>
         </div>
@@ -57,10 +59,10 @@ const Lang_dd = (props) => {
         ""
       ) : locale === "en-th" || locale === "th-th" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/en-th" locale="en-th">
+          <Link href={locale === 'en-th' ? 'en-th' : `${asPath}`} locale="en-th">
             English 
           </Link>
-          <Link href="/th-th" locale="th-th">
+          <Link href={locale === 'th-th' ? 'th-th' : `${asPath}`} locale="th-th">
             แบบไทย
           </Link>
         </div>
@@ -68,10 +70,10 @@ const Lang_dd = (props) => {
         ""
       ) : locale === "en-in" || locale === "hi-in" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/en-in" locale="en-in">
+          <Link href={locale === 'en-in' ? 'en-in' : `${asPath}`} locale="en-in">
             English
           </Link>
-          <Link href="/hi-in" locale="hi-in">
+          <Link href={locale === 'hi-in' ? 'hi-in' : `${asPath}`} locale="hi-in">
             हिन्दी
           </Link>
         </div>
@@ -85,19 +87,19 @@ const Lang_dd = (props) => {
         ""
       ) : locale === "en-kw" || locale === "ar-kw" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/en-kw" locale="en-kw">
+          <Link href={locale === 'en-kw' ? 'en-kw' : `${asPath}`} locale="en-kw">
             English
           </Link>
-          <Link href="/ar-kw" locale="ar-kw">
+          <Link href={locale === 'ar-kw' ? 'ar-kw' : `${asPath}`} locale="ar-kw">
             عربى
           </Link>
         </div>
       ) : locale === "ms-my" || locale === "en-my" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/ms-my" locale="ms-my">
+          <Link href={locale === 'ms-my' ? 'ms-my' : `${asPath}`} locale="ms-my">
             melayu 
           </Link>
-          <Link href="/en-my" locale="en-my">
+          <Link href={locale === 'en-my' ? 'en-my' : `${asPath}`} locale="en-my">
             English
           </Link>
         </div>
@@ -105,154 +107,154 @@ const Lang_dd = (props) => {
         ""
       ) : locale === "en-sa" || locale === "ar-sa" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/en-sa" locale="en-sa">
+          <Link href={locale === 'en-sa' ? 'en-sa' : `${asPath}`} locale="en-sa">
             English
           </Link>
-          <Link href="/ar-sa" locale="ar-sa">
+          <Link href={locale === 'ar-sa' ? 'ar-sa' : `${asPath}`} locale="ar-sa">
             عربى
           </Link>
         </div>
       ) : locale === "en-tr" || locale === "tr-tr" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/en-tr" locale="en-tr">
+          <Link href={locale === 'en-tr' ? 'en-tr' : `${asPath}`} locale="en-tr">
             English
           </Link>
-          <Link href="/tr-tr" locale="tr-tr">
+          <Link href={locale === 'tr-tr' ? 'tr-tr' : `${asPath}`} locale="tr-tr">
             Türk
           </Link>
         </div>
       ) : locale === "uk-ua" || locale === "en-ua" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/uk-ua" locale="uk-ua">
+          <Link href={locale === 'uk-ua' ? 'uk-ua' : `${asPath}`} locale="uk-ua">
             русский
           </Link>
-          <Link href="/en-ua" locale="en-ua">
+          <Link href={locale === 'en-ua' ? 'en-ua' : `${asPath}`} locale="en-ua">
             English
           </Link>
         </div>
       ) : locale === "en-ae" || locale === "ar-ae" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/en-ae" locale="en-ae">
+          <Link href={locale === 'en-ae' ? 'en-ae' : `${asPath}`} locale="en-ae">
             English
           </Link>
-          <Link href="/ar-ae" locale="ar-ae">
+          <Link href={locale === 'ar-ae' ? 'ar-ae' : `${asPath}`} locale="ar-ae">
             عربى
           </Link>
         </div>
       ) : locale === "en-ca" || locale === "fr-ca" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/en-ca" locale="en-ca">
+          <Link href={locale === 'en-ca' ? 'en-ca' : `${asPath}`} locale="en-ca">
             English
           </Link>
-          <Link href="/fr-ca" locale="fr-ca">
+          <Link href={locale === 'fr-ca' ? 'fr-ca' : `${asPath}`} locale="fr-ca">
             française
           </Link>
         </div>
       ) : locale === "hu-hu" || locale === "de-hu" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/hu-hu" locale="hu-hu">
+          <Link href={locale === 'hu-hu' ? 'hu-hu' : `${asPath}`} locale="hu-hu">
             Magyar
           </Link>
-          <Link href="/de-hu" locale="de-hu">
+          <Link href={locale === 'de-hu' ? 'de-hu' : `${asPath}`} locale="de-hu">
             deutsch
           </Link>
         </div>
       ) : locale === "de-at" || locale === "fr-at" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/de-at" locale="de-at">
+          <Link href={locale === 'de-at' ? 'de-at' : `${asPath}`} locale="de-at">
             deutsch
           </Link>
-          <Link href="/fr-at" locale="fr-at">
+          <Link href={locale === 'fr-at' ? 'fr-at' : `${asPath}`} locale="fr-at">
             française
           </Link>
         </div>
       ) : locale === "en-rs" || locale === "sr-rs" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/en-rs" locale="en-rs">
+          <Link href={locale === 'en-rs' ? 'en-rs' : `${asPath}`} locale="en-rs">
             English
           </Link>
-          <Link href="/sr-rs" locale="sr-rs">
+          <Link href={locale === 'sr-rs' ? 'sr-rs' : `${asPath}`} locale="sr-rs">
             Српски
           </Link>
         </div>
       ) : locale === "de-ch" || locale === "fr-ch" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/de-ch" locale="de-ch">
+          <Link href={locale === 'de-ch' ? 'de-ch' : `${asPath}`} locale="de-ch">
             deutsch
           </Link>
-          <Link href="/fr-ch" locale="fr-ch">
+          <Link href={locale === 'fr-ch' ? 'fr-ch' : `${asPath}`} locale="fr-ch">
             française
           </Link>
         </div>
       ) : locale === "de-de" || locale === "en-de" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/de-de" locale="de-de">
+          <Link href={locale === 'de-de' ? 'de-de' : `${asPath}`} locale="de-de">
             deutsch
           </Link>
-          <Link href="/en-de" locale="en-de">
+          <Link href={locale === 'en-de' ? 'en-de' : `${asPath}`} locale="en-de">
             English
           </Link>
         </div>
       ) : locale === "en-il" || locale === "he-il" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/en-il" locale="en-il">
+          <Link href={locale === 'en-il' ? 'en-il' : `${asPath}`} locale="en-il">
             English
           </Link>
-          <Link href="/he-il" locale="he-il">
+          <Link href={locale === 'he-il' ? 'he-il' : `${asPath}`} locale="he-il">
             עִברִית
           </Link>
         </div>
       ) : locale === "bg-bg" || locale === "en-bg" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/bg-bg" locale="bg-bg">
+          <Link href={locale === 'bg-bg' ? 'bg-bg' : `${asPath}`} locale="bg-bg">
             български
           </Link>
-          <Link href="/en-bg" locale="en-bg">
+          <Link href={locale === 'en-bg' ? 'en-bg' : `${asPath}`} locale="en-bg">
             English
           </Link>
         </div>
       ) : locale === "fr-fr" || locale === "en-fr" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/fr-fr" locale="fr-fr">
+          <Link href={locale === 'fr-fr' ? 'fr-fr' : `${asPath}`} locale="fr-fr">
             française
           </Link>
-          <Link href="/en-fr" locale="en-fr">
+          <Link href={locale === 'en-fr' ? 'en-fr' : `${asPath}`} locale="en-fr">
             English
           </Link>
         </div>
       ) : locale === "it-it" || locale === "en-it" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/it-it" locale="it-it">
+          <Link href={locale === 'it-it' ? 'it-it' : `${asPath}`} locale="it-it">
             italiano
           </Link>
-          <Link href="/en-it" locale="en-it">
+          <Link href={locale === 'en-it' ? 'en-it' : `${asPath}`} locale="en-it">
             English
           </Link>
         </div>
       ) : locale === "da-dk" || locale === "en-dk" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/da-dk" locale="da-dk">
+          <Link href={locale === 'da-dk' ? 'da-dk' : `${asPath}`} locale="da-dk">
             dansk
           </Link>
-          <Link href="/en-dk" locale="en-dk">
+          <Link href={locale === 'en-dk' ? 'en-dk' : `${asPath}`} locale="en-dk">
             English
           </Link>
         </div>
       ) : locale === "sk-sk" || locale === "hu-sk" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/sk-sk" locale="sk-sk">
+          <Link href={locale === 'sk-sk' ? 'sk-sk' : `${asPath}`} locale="sk-sk">
             slovenský
           </Link>
-          <Link href="/hu-sk" locale="hu-sk">
+          <Link href={locale === 'hu-sk' ? 'hu-sk' : `${asPath}`} locale="hu-sk">
             Magyar
           </Link>
         </div>
       ) : locale === "no-no" || locale === "en-no" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/no-no" locale="no-no">
+          <Link href={locale === 'no-no' ? 'no-no' : `${asPath}`} locale="no-no">
             norsk
           </Link>
-          <Link href="/en-no" locale="en-no">
+          <Link href={locale === 'en-no' ? 'en-no' : `${asPath}`} locale="en-no">
             English
           </Link>
         </div>
@@ -266,23 +268,20 @@ const Lang_dd = (props) => {
         ""
       ) : locale === "lt-lt" ? (
         ""
-      ) : locale === "ro-ro" || locale === "hu-ro" ? (
+      ) : locale === "ro-ro"  ? (
         <div className="cn_dd la_ndd">
-          <Link href="/ro-ro" locale="ro-ro">
+          <Link href={locale === 'ro-ro' ? 'ro-ro' : `${asPath}`} locale="ro-ro">
             Română
-          </Link>
-          <Link href="/hu-ro" locale="hu-ro">
-            Magyar
-          </Link>
+          </Link>          
         </div>
       ) : locale === "lv-lv" ? (
         ""
       ) : locale === "nl-nl" || locale === "en-nl" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/nl-nl" locale="nl-nl">
+          <Link href={locale === 'nl-nl' ? 'nl-nl' : `${asPath}`} locale="nl-nl">
             nederlands
           </Link>
-          <Link href="/en-nl" locale="en-nl">
+          <Link href={locale === 'en-nl' ? 'en-nl' : `${asPath}`} locale="en-nl">
             English
           </Link>
         </div>
@@ -290,19 +289,19 @@ const Lang_dd = (props) => {
         ""
       ) : locale === "nl-be" || locale === "fr-be" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/nl-be" locale="nl-be">
+          <Link href={locale === 'nl-be' ? 'nl-be' : `${asPath}`} locale="nl-be">
             deutsch
           </Link>
-          <Link href="/fr-be" locale="fr-be">
+          <Link href={locale === 'fr-be' ? 'fr-be' : `${asPath}`} locale="fr-be">
             française
           </Link>
         </div>
       ) : locale === "cs-cz" || locale === "de-cz" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/cs-cz" locale="cs-cz">
+          <Link href={locale === 'cs-cz' ? 'cs-cz' : `${asPath}`} locale="cs-cz">
             čeština
           </Link>
-          <Link href="/de-cz" locale="de-cz">
+          <Link href={locale === 'de-cz' ? 'de-cz' : `${asPath}`} locale="de-cz">
              deutsch
           </Link>
         </div>
@@ -312,37 +311,37 @@ const Lang_dd = (props) => {
         ""
       ) : locale === "sv-se" || locale === "en-se" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/sv-se" locale="sv-se">
+          <Link href={locale === 'sv-se' ? 'sv-se' : `${asPath}`} locale="sv-se">
             svenska
           </Link>
-          <Link href="/en-se" locale="en-se">
+          <Link href={locale === 'en-se' ? 'en-se' : `${asPath}`} locale="en-se">
             English
           </Link>
         </div>
       ) : locale === "es-mx" || locale === "en-mx" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/es-mx" locale="es-mx">
+          <Link href={locale === 'es-mx' ? 'es-mx' : `${asPath}`} locale="es-mx">
             español
           </Link>
-          <Link href="/en-mx" locale="en-mx">
+          <Link href={locale === 'en-mx' ? 'en-mx' : `${asPath}`} locale="en-mx">
             English
           </Link>
         </div>
       ) : locale === "pt-br" || locale === "es-br" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/pt-br" locale="pt-br">
+          <Link href={locale === 'pt-br' ? 'pt-br' : `${asPath}`} locale="pt-br">
             Português
           </Link>
-          <Link href="/es-br" locale="es-br">
+          <Link href={locale === 'es-br' ? 'es-br' : `${asPath}`} locale="es-br">
             español
           </Link>
         </div>
       ) : locale === "fi-fi" || locale === "sv-fi" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/fi-fi" locale="fi-fi">
+          <Link href={locale === 'fi-fi' ? 'fi-fi' : `${asPath}`} locale="fi-fi">
             Suomalainen
           </Link>
-          <Link href="/sv-fi" locale="sv-fi">
+          <Link href={locale === 'sv-fi' ? 'sv-fi' : `${asPath}`} locale="sv-fi">
             svenska
           </Link>
         </div>
@@ -350,28 +349,28 @@ const Lang_dd = (props) => {
         ""
       ) : locale === "en-id" || locale === "ms-id" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/en-id" locale="en-id">
+          <Link href={locale === 'en-id' ? 'en-id' : `${asPath}`} locale="en-id">
             English
           </Link>
-          <Link href="/ms-id" locale="ms-id">
+          <Link href={locale === 'ms-id' ? 'ms-id' : `${asPath}`} locale="ms-id">
             melayu
           </Link>
         </div>
       ) : locale === "es-ar" || locale === "it-ar" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/es-ar" locale="es-ar">
+          <Link href={locale === 'es-ar' ? 'es-ar' : `${asPath}`} locale="es-ar">
             español
           </Link>
-          <Link href="/it-ar" locale="it-ar">
+          <Link href={locale === 'it-ar' ? 'it-ar' : `${asPath}`} locale="it-ar">
             italiano
           </Link>
         </div>
       ) : locale === "es-cl" || locale === "en-cl" ? (
         <div className="cn_dd la_ndd">
-          <Link href="/es-cl" locale="es-cl">
+          <Link href={locale === 'es-cl' ? 'es-cl' : `${asPath}`} locale="es-cl">
             español
           </Link>
-          <Link href="/en-cl" locale="en-cl">
+          <Link href={locale === 'en-cl' ? 'en-cl' : `${asPath}`} locale="en-cl">
             English
           </Link>
         </div>

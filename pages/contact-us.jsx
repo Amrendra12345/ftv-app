@@ -1,14 +1,35 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/router';
 import React from 'react'
-import { Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap';
 
-export default function Contactus() {
+export default function Contactus(props) {
+  
+   const schema = {
+      "@context" : "https://schema.org",
+      "@type" : "Organization",
+      "Name"  :  "Fast Track Visa",
+      "url" : "https://fasttrackvisa.com/en-in",
+      "contactPoint" : [
+         { "@type" : "ContactPoint",
+           "telephone" : "+919711610418",
+           "contactType" : "customer service"
+         } ] 
+   }
   return (
     <>
     <Head>
-        <title> Contact Us</title>
+    <title>Contact Us | Fast Track Visa  </title>
+    <meta name="description" content={`Contact Fast Track Visa at fasttrackvisa.com for assistance with visas, e-visas, flight bookings, hotel reservations, and a variety and holiday packages.`} />
+    <link rel="canonical" href={`https://fasttrackvisa.com/${props.country_ext}/contact-us`}/>
+    <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+    
     </Head>
+    
        <div className="checkout_banner">
            <Container>
               <h1>Contact Us</h1>
@@ -33,3 +54,9 @@ export default function Contactus() {
     </>
   )
 }
+export async function getServerSideProps(ctx){
+   const country_ext = ctx.locale;
+    return{
+      props: {country_ext}
+    }
+ }

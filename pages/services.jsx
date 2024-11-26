@@ -5,9 +5,12 @@ import { Container } from "react-bootstrap";
 const Services = () => {
   return (
     <>
+      
       <Head>
-        <title>Services</title>
-      </Head>
+                <title>Services | Fast Track Visa   </title>
+                <meta name="description" content={``} />
+                <link rel="canonical" href={`https://fasttrackvisa.com/en-in/services`}/>
+            </Head>
       <div className="checkout_banner">
         <Container>
           <h1>Services</h1>

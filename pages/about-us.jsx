@@ -1,12 +1,15 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { Container } from "react-bootstrap";
 
-export default function Aboutus() {
+export default function Aboutus(props) {
   return (
     <>
       <Head>
-        <title>About Us</title>
+        <title>About Us | Fast Track Visa </title>
+        <meta name="description" content={`Fast Track Visa is one of the fastest-growing travel and tourism companies in India. We offer comprehensive information and services related to visas, e-visas, flight bookings, hotel reservations, and both domestic and international holiday packages`} />
+        <link rel="canonical" href={`https://fasttrackvisa.com/${props.country_ext}/about-us`}/>
       </Head>
       <div className="checkout_banner">
         <Container>
@@ -53,4 +56,10 @@ export default function Aboutus() {
       </Container>
     </>
   );
+}
+export async function getServerSideProps(ctx){
+  const country_ext = ctx.locale;
+   return{
+     props: {country_ext}
+   }
 }

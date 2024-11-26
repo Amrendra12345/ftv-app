@@ -3,12 +3,16 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import styles from '../styles/term.module.scss'
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
-export default function PrivacyPolicy() {
+export default function PrivacyPolicy(props) {
+  const {locale} = useRouter();
   return (
     <>
     <Head>
-       <title>Privacy policy</title>
+       <title>{`Privacy Policy | Fast Track Visa `}</title>
+       <meta name="description" content={`Discover our comprehensive Privacy Policy page, detailing how Fast Track Visa safeguards your personal information, ensures data security, and maintains transparency in all our travel services.`} />
+       <link rel="canonical" href={`https://fasttrackvisa.com/${props.country_ext}/privacy-policy`}/>
     </Head>
     <section className="privacyPolicy">
       <div className="checkout_banner">
@@ -105,4 +109,11 @@ export default function PrivacyPolicy() {
     </section>
     </>
   );
+}
+
+export async function getServerSideProps(ctx){
+  const country_ext = ctx.locale;
+   return{
+     props: {country_ext}
+   }
 }

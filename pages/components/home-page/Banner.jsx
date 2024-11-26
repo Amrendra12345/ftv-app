@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic'
-const ReactPlayer =dynamic(() => import('react-player'), { ssr: false })
+const ReactPlayer =dynamic((e) => import('react-player'), { ssr: false })
 
 export default function Banner(props) {
   return (
@@ -20,7 +20,7 @@ export default function Banner(props) {
             }
           }}
           width={"100%"}
-          url="https://player.vimeo.com/video/777995194"
+          url="/videos/HomePage.mp4"
         />
       </div>
       <h1 className="pagevtitle">{props.pageTitle}</h1>

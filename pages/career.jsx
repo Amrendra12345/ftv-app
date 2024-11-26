@@ -1,13 +1,17 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/router';
 import React from 'react'
 import { Container } from 'react-bootstrap'
 
-export default function Career() {
+export default function Career(props) {
+  
   return (
     <>
     <Head>
-        <title> Career </title>
+    <title>Career | Fast Track Visa   </title>
+    <meta name="description" content={`At Fast Track Visa, you will have the chance to leverage state-of-the-art technology, collaborate with industry professionals, and develop ground-breaking solutions in the fast-growing travel sector.`} />
+    <link rel="canonical" href={`https://fasttrackvisa.com/${props.country_ext}/career`}/>
     </Head>
       <div className="checkout_banner">
           <Container>
@@ -25,4 +29,10 @@ export default function Career() {
       </Container>
     </>
   )
+}
+export async function getServerSideProps(ctx){
+  const country_ext = ctx.locale;
+   return{
+     props: {country_ext}
+   }
 }
