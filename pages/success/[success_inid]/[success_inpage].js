@@ -17,8 +17,7 @@ const Successpage = (props) => {
     const [currentActiveWebCamSubIndex, setCurrentActiveWebCamSubIndex] =useState(null)
     const [captureImageSrc, setCaptureImageSrc] =useState('')
     const [showAlert, setShowAlert] = useState(false)
-    const [showsuccessAlert, setShowsuccessAlert] = useState(false)
-    const [thankupage, setThankupage] = useState({})
+    const [showsuccessAlert, setShowsuccessAlert] = useState(false)  
     const[showForm, setShowForm] = useState(false)
     const user = useUserInfo();
     const userInfo = user.userData;
@@ -34,7 +33,8 @@ const Successpage = (props) => {
             addFormFields();
         }
         updatePayment();
-        setThankupage(props.thankupage)
+      
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
  const updatePayment = async () => {
         const user_id = userInfo.id || sessionStorage.getItem("user_id");        
@@ -290,8 +290,9 @@ const submitHandler = ()=>{
                             </button></div>
                           )}
                         </Webcam>
-                        : <> <img src={captureImageSrc}
-                        /> <div className='text-center'><button className='btn btn-secondary mt-2'
+                        : <> <Image src={captureImageSrc} alt='img camera' width={960}  height={500}
+                        /> 
+                        <div className='text-center'><button className='btn btn-secondary mt-2'
                           onClick={() => {
                             handleCaptureImageChange(currentActiveWebCamIndex, currentActiveWebCamSubIndex, captureImageSrc, currentActiveWebCamName);
                           }}

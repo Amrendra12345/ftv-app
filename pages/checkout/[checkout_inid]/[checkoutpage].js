@@ -108,6 +108,7 @@ const Checkoutpagein = (props) => {
     }
     useEffect(() => {
         addFormFields()
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     const Coupon_code = (e) => {
         setCouponCode(e.target.value);

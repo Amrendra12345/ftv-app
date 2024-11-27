@@ -79,6 +79,7 @@ const Navbar = (props) => {
     }
    }
     loginData();
+     // eslint-disable-next-line react-hooks/exhaustive-deps
  },[session])
   
 
