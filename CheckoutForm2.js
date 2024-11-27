@@ -65,7 +65,7 @@ export default function CheckoutForm(props) {
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: "http://localhost:3000/" + sessionStorage.getItem('cId') + '/success/' + sessionStorage.getItem('ProductId') + '/' + sessionStorage.getItem('order_id'),
+        return_url: "https://ftv-app-33d6.vercel.app/" + sessionStorage.getItem('cId') + '/success/' + sessionStorage.getItem('ProductId') + '/' + sessionStorage.getItem('order_id'),
       },
       //redirect: 
     })
