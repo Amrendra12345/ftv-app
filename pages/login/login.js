@@ -76,7 +76,7 @@ const Login = (props, { handleCallback }) => {
                                                 <button type='button' className='btn btn-smlogin facebookbtn' onClick={facebookSignIn}> Login with Facebook </button>
                                                 <button type='button' className='btn btn-smlogin googlebtn mt-3' onClick={googleSignIn}> Sign In with Google  </button>
                                                 <div className='or'><span>OR</span></div>
-                                                <form method='POST' onSubmit={handleSubmit}>
+                                                <form method='POST' onSubmit={handleSubmit} action="/api/auth/callback/credentials">
                                                 <div className="ftv-field">
                                                     <label htmlFor="logininput">Email ID</label>
                                                     <input id="logininput" name="logininput" type="text" className="form-control" placeholder="Here" onChange={(e)=> setinputValue(e.target.value)} />
