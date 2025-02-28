@@ -24,12 +24,10 @@ const SearchCountry = (props) => {
       if(!res.ok){
           setError('No country')
       }
-      const data = await res.json();
-   
+      const data = await res.json();       
       setOriginCountry(data.origin_country)
-      setFilterOrigin(data.origin_country)     
+      setFilterOrigin(data.origin_country)
       setIsOpen(true)
-      
   }
   const originChangekHandler = (e) =>{
       const val = e.target.value      
@@ -50,25 +48,19 @@ const SearchCountry = (props) => {
   }
   
  const selectedOriginCountry = async(e)=>{
-   
       const country =  e.target.innerText 
       const countryKey = e.target.getAttribute('label');
       setOriginInputValue(country);
       setOriginCountryKey(countryKey)
       setIsOpen(false);      
-      if(typeof window === undefined){
-        localStorage.setItem("origin", country)
-     }
-    
       // destionation country start
-        
+
       try {
           const res = await fetch(`https://cms.fasttrackvisa.com/api/${props.ce_name}/origin-country/${country}`)
           if(!res.ok){
               throw new error
           }
           const data = await res.json();
-          
           if(data.destination_country.length > 1){
             setIsError('')
             setDesInputValue('')
@@ -93,7 +85,6 @@ const SearchCountry = (props) => {
 const desClickHandler = (e)=>{
     const country =  e.target.innerText 
     setDesInputValue(country)
-    
     setIsError('')
     if(0 === filterDestination.length){
         if(originInputValue !== ''){
@@ -122,12 +113,11 @@ const desChangeHandler = (e)=>{
       setFilterDestination(filterData)
   }else{
       setFilterDestination(destination)
-      
   }
   
 }
 const desCountryClick = async(e)=>{
-  const country =  e.target.innerText   
+  const country =  e.target.innerText 
   setDesInputValue(country)
   setIsActive(false)
 }
@@ -178,7 +168,6 @@ const handleKeyDown = (e)=>{
 const GetEvisa = async() =>{
   const destination = desInputValue;
   const extention = originCountryKey    
-  
   setIsError('')
   if(originInputValue.length < 1){
       setIsError('Please select your origin country')

@@ -26,6 +26,9 @@ p {
     color: #717171;
     font-size: 14px
 }
+a{
+    text-decoration: none;
+}
 
 .f16 {
     font-size: 16px
@@ -231,9 +234,11 @@ p {
 .cn_dd a {
     color: #333 !important;
     display: flex;
+    gap: 10px;
+    line-height: 1;
     align-items: center;
     justify-content: flex-start;
-    padding: 5px 10px;
+    padding: 10px;
     border-bottom: 1px solid #f1f1f1;
     font-size: 14px;
     font-weight: 500;
@@ -497,6 +502,10 @@ p {
     padding: 14px 10px;
     width: 42%;
     font-weight: 600;
+    &:hover{
+        background-color: #18165e;
+        color: #fff !important;  
+    }
 }
 
 
@@ -1169,6 +1178,7 @@ li .buy_btn:hover {
 .modal-lg span.close2 {
     font-size: 27px !important;
     margin-top: -8px;
+    margin-left: auto;
     cursor: pointer
 }
 

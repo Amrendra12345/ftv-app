@@ -234,8 +234,9 @@ header
                 align-items: center;
                 gap: 5px;
                 .login_img{
+                    flex-shrink: 0;
                    width: 50%;
-                   height: 600px;
+                   height: auto;
                    background-color: #141414;
                    position: relative;
                    @media screen and (max-width: 992px){
@@ -247,7 +248,8 @@ header
                    }
                 }
                 .login-from{
-                    width: 100%;
+                    width: 50%;
+                    flex-shrink: 0;
                     @media screen and (max-width:992px){
                         width: 100%;
                     }
@@ -301,4 +303,14 @@ header
     position: absolute;
     top: 2px;
     width: 100%;
+}
+
+.chat_tms img{
+    box-shadow: 0 4px 10px rgb(0 0 0 / 24%);
+    border-radius: 10px;
+}
+.chat_tms{
+   position: fixed;
+   bottom: 13%;
+   right: 1%;
 }

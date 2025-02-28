@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import AsidesProfile from '../components/AsidesProfile';
 
 export default function ChangePassword() {
     const {locale} = useRouter()
@@ -44,11 +45,6 @@ export default function ChangePassword() {
 
 	return (
 		<>
-
-			{/* <header className={'App-header' + ` ${activeClass}`}>
-				<Nav ce_name={c_ext} lob_name="home_page" meta_title={'Apply Global eVisa | Tourist &amp; Business eVisa Online Services | Fast Track Visa'} meta_desc={'Apply for e-visa, tourist &amp; business visa globally online Through Fast Track Visa. We ensure fewer chances of rejection, world-class security, 24/7 customer support &amp; a speedy process.'} meta_keyword="" meta_img="/img/logo.png" meta_url={'my-profile/change-password'}> </Nav>
-			</header> */}
-
 			<div className="checkout_banner">
 				<Container>
 					<h1 className='mt-5'>Welcome back, </h1>
@@ -57,11 +53,7 @@ export default function ChangePassword() {
 			</div>
 			<Container>
 				<ol className="breadcrumb pl-0 bg-white">
-					<li className="breadcrumb-item"><Link href={'/'}>
-
-						Home
-
-					</Link></li>
+					<li className="breadcrumb-item"><Link href={'/'}>Home</Link></li>
 					<li className="breadcrumb-item"><Link href={'/my-profile'}>
 
 						My Profile
@@ -74,13 +66,7 @@ export default function ChangePassword() {
 				<div className="desi-work-container pt-3">
 
 					<Row>
-						<Col sm={12} md={3} lg={3}>
-							<ul className='profile_ul'>
-								<li><Link href={'/' + locale + '/my-profile/my-transactions'}><i className='fa fa-list'></i> My Transactions </Link></li>
-								<li><Link href={'/' + locale + '/my-profile/change-password'}><i className='fa fa-key'></i> Change Password </Link></li>
-								<li><Link href={'/' + locale + '/my-profile'}><i className='fa fa-user'></i> Update Profile </Link></li>
-							</ul>
-						</Col>
+						<AsidesProfile/>
 						<Col sm={12} md={9} lg={9}>
 
 							<form onSubmit={handleSubmit}>

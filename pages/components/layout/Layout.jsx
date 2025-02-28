@@ -6,11 +6,9 @@ export default function Layout({ children }) {
   
   return (
     <>
-     
-        <Navbar  ce_name={"en-in"}/>
-            <main className={inter.className}>{children}</main>
-        <Footer />
-    
+       <Navbar  ce_name={"en-in"}/>
+       <main className={''}>{children}</main>
+       <Footer />
    </>
   )
 }

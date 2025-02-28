@@ -4,12 +4,11 @@ import React from "react";
 const Lang_dsp = () => {
   const { locale } = useRouter();
   const router = useRouter();
-  const { pathname, asPath, query } = router
-  
+  const { pathname, asPath, query } = router;
 
   return (
     <>
-      {locale === "" ? (
+      {locale === "en-us" ? (
         <span>English</span>
       ) : locale === "en-sg" ? (
         <span>English </span>

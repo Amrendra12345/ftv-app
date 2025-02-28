@@ -61,11 +61,11 @@ export default function CheckoutForm(props) {
     }
 
     setIsLoading(true);
-
+//"https://fasttrackvisa.com/"
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: "https://ftv-app-33d6.vercel.app/" + sessionStorage.getItem('cId') + '/success/' + sessionStorage.getItem('ProductId') + '/' + sessionStorage.getItem('order_id'),
+        return_url: "https://fasttrackvisa.com/" + sessionStorage.getItem('cId') + '/success/' + sessionStorage.getItem('ProductId') + '/' + sessionStorage.getItem('order_id'),
       },
       //redirect: 
     })
@@ -100,7 +100,7 @@ export default function CheckoutForm(props) {
 
 
   return (
-    <form id="payment-form" onSubmit={handleSubmit}>
+    <form id="payment-form" onSubmit={handleSubmit} className="p-3">
       <LinkAuthenticationElement
         id="link-authentication-element"
         options={{ defaultValues: { email: userInfo } }}
@@ -113,7 +113,7 @@ export default function CheckoutForm(props) {
       <PaymentElement id="payment-element" options={paymentElementOptions} />
       <button disabled={isLoading || !stripe || !elements} id="submit" className="btn btn-primary mt-3">
         <span id="button-text">
-          {isLoading ? "Processing ..." : "Pay now"}
+          {isLoading ? "Processing...": "Pay now"}
         </span>
       </button>
       {/* Show any error or success messages */}

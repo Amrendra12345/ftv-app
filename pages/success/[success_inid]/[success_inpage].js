@@ -1,4 +1,4 @@
-import { useUserInfo } from '@/context/loginContext';
+
 import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link'
@@ -17,11 +17,14 @@ const Successpage = (props) => {
     const [currentActiveWebCamSubIndex, setCurrentActiveWebCamSubIndex] =useState(null)
     const [captureImageSrc, setCaptureImageSrc] =useState('')
     const [showAlert, setShowAlert] = useState(false)
-    const [showsuccessAlert, setShowsuccessAlert] = useState(false)  
-    const[showForm, setShowForm] = useState(false)
-    const user = useUserInfo();
-    const userInfo = user.userData;
-
+    const [showsuccessAlert, setShowsuccessAlert] = useState(false)
+    const [thankupage, setThankupage] = useState({})
+    const[showForm, setShowForm] = useState(false)   
+    
+    let userInfo;
+    if(typeof window !== 'undefined'){
+        userInfo = JSON.parse(localStorage.getItem("loginDetails"));       
+     }
    const videoConstraints = {
         facingMode: "user",
       };
@@ -33,7 +36,7 @@ const Successpage = (props) => {
             addFormFields();
         }
         updatePayment();
-      
+        setThankupage(props.thankupage)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
  const updatePayment = async () => {
@@ -61,9 +64,7 @@ const Successpage = (props) => {
  
     const addFormDocumentFields = ()=>{
         setTraveler_document_info([...traveler_document_info, {}])
-    }
-   
-  
+    }  
     
   const handleInputFileChange = (index, subindex, event, name)=>{
         let UploadedFile = [...uploadedFile]
@@ -290,9 +291,12 @@ const submitHandler = ()=>{
                             </button></div>
                           )}
                         </Webcam>
-                        : <> <Image src={captureImageSrc} alt='img camera' width={960}  height={500}
-                        /> 
-                        <div className='text-center'><button className='btn btn-secondary mt-2'
+                        : <> <Image src={captureImageSrc} alt='camera' width={960} height={760}  sizes="100vw"
+                        style={{
+                          width: '100%',
+                          height: 'auto',
+                        }}
+                        /> <div className='text-center'><button className='btn btn-secondary mt-2'
                           onClick={() => {
                             handleCaptureImageChange(currentActiveWebCamIndex, currentActiveWebCamSubIndex, captureImageSrc, currentActiveWebCamName);
                           }}
